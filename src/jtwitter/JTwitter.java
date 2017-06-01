@@ -2,6 +2,10 @@
 package jtwitter;
 
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
 import javax.swing.JOptionPane;
 
 /**
@@ -21,11 +25,16 @@ public class JTwitter {
      * 
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException, IOException {
        
         int opcion;
 
         Autorizacion aut = new Autorizacion();
+        
+        Properties propiedades = new Properties();
+        FileInputStream in = new FileInputStream("twitter4j.properties");
+        propiedades.load(in);
+        in.close();
 
         do {
 
