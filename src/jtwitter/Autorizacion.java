@@ -24,6 +24,12 @@ public class Autorizacion {
     public Autorizacion() {
     }
     
+    /**
+
+     * Shows the last five Tweets from our timeline
+
+     */
+    
     public void showTimeLine(){
         
         List<Status> statuses = null;
@@ -50,7 +56,7 @@ public class Autorizacion {
 
             aux = it.next();
 
-            mensajes += aux.getUser().getName() + " : " + aux.getText() + "\n-------\n";
+            mensajes += aux.getUser().getName() + " : " + aux.getText() + "\n----\n";
 
             i++;
 
@@ -60,6 +66,33 @@ public class Autorizacion {
         
     }
     
+    /**
+
+     * Posts a new Tweet from our twitter
+
+     *
+
+     * @param lastTweet it contents the information of the tweet which we are going to post.
+
+     */
+
+    public void postTweet(String lastTweet) {
+
+        Status status = null;
+
+        try {
+
+            status = twitter.updateStatus(lastTweet);
+
+        } catch (TwitterException ex) {
+
+            Logger.getLogger(Autorizacion.class.getName()).log(Level.SEVERE, null, ex);
+
+        }
+
+        System.out.println("Properly posted tweet ["+ status.getText()+"].");
+
+    }
  
 }
     
