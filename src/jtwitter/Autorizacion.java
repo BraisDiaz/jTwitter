@@ -15,6 +15,12 @@ import twitter4j.conf.ConfigurationBuilder;
 
 public class Autorizacion {
    
+    private ConfigurationBuilder cb;
+    
+    private Twitter twitter = TwitterFactory.getSingleton();
+    
+    
+    
  
 }
     
