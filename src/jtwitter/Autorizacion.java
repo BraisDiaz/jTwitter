@@ -28,6 +28,7 @@ public class Autorizacion {
     static Iterator <Status>it = tweets.iterator();
 
     
+    
     public Autorizacion() {
        
     }
