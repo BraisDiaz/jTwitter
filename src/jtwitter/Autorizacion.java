@@ -1,7 +1,6 @@
 
 package jtwitter;
 
-import java.util.*;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.Iterator;
@@ -124,12 +123,34 @@ public class Autorizacion {
 
         }
     }
-   
-   
+    
+    /**
+
+ * Sends a DM to a user.
+
+ * @param usuario The user you wants to send a message
+
+ * @param mensaje The information of the message
+
+ */
+
+    public void sendDM(String usuario, String mensaje) {
+
+        DirectMessage message;
+
+        try {
+
+            message = twitter.sendDirectMessage(usuario, mensaje);
+
+            System.out.println("Sent: "+ message.getText() + " to @" + message.getRecipientScreenName());       
+
+        } catch (TwitterException ex) {
+
+            Logger.getLogger(Autorizacion.class.getName()).log(Level.SEVERE, null, ex);
+
+        }
+    }
 }
     
-
-
-
     
 
