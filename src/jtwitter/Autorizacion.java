@@ -43,8 +43,6 @@ public class Autorizacion {
 
         configbuilder = new ConfigurationBuilder();
         
-        configbuilder.setDebugEnabled(true);
-
         configbuilder.setOAuthConsumerKey("Introducir token propio");
 
         configbuilder.setOAuthConsumerSecret("Introducir token propio");
@@ -52,6 +50,7 @@ public class Autorizacion {
         configbuilder.setOAuthAccessToken("Introducir token propio");
 
         configbuilder.setOAuthAccessTokenSecret("Introducir token propio");
+
 
         TwitterFactory twittfact = new TwitterFactory(configbuilder.build());
 
