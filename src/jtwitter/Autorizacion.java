@@ -26,7 +26,7 @@ public class Autorizacion {
     
     /**
 
-     * Shows the last five Tweets from our timeline
+     * Shows the last five tweets from our timeline
 
      */
     
@@ -93,7 +93,39 @@ public class Autorizacion {
         System.out.println("Properly posted tweet ["+ status.getText()+"].");
 
     }
- 
+    
+    /**
+
+     * Search a tweet for a word or a hashtag
+
+     * @param consulta It contains the word you are looking for.
+
+     */
+
+    public void queryTweet(String consulta) {
+
+        Query query = new Query(consulta);
+
+        QueryResult result = null;
+
+        try {
+
+            result = twitter.search(query);
+
+        } catch (TwitterException ex) {
+
+            Logger.getLogger(JTwitter.class.getName()).log(Level.SEVERE, null, ex);
+
+        }
+
+        for (Status status : result.getTweets()) {
+
+            System.out.println("@" + status.getUser().getScreenName() + ":" + status.getText());
+
+        }
+    }
+   
+   
 }
     
 
